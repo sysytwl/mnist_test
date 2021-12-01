@@ -4,7 +4,7 @@ import os
 import numpy as np
 import matplotlib.pyplot as plt
 import tensorflow as tf
-from tensorflow.examples.tutorials.mnist import input_data
+import input_data
 # 加载mnist_inference.py中定义的常量和前向传播的函数
 import mnist_inference
  
