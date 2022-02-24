@@ -45,7 +45,6 @@ def evaluate(mnist):
         saver = tf.train.Saver(variable_to_restore)
  
         #每隔EVAL_INTERVAL_SECS秒调用一次计算正确率的过程以检测训练过程中正确率的变化
-        while True:
             with tf.Session() as sess:
                 # tf.train.get_checkpoint_state函数会通过checkpoint文件自动找到目录中最新模型的文件名 
                 ckpt = tf.train.get_checkpoint_state(minist_train.MODEL_SAVE_PATH)
@@ -58,10 +57,7 @@ def evaluate(mnist):
                     print("After %s training step(s), validation accuracy = %f" % (global_step, accuracy_score))
                     step_.append(global_step)
                     accuracy_percentage.append(accuracy_score*100)
-                else:
-                    print("No checkpoint file found")
 
-            time.sleep(EVAL_INTERVAL_SECS)
             
  
  
